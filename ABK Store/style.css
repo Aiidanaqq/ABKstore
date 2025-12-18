@@ -1,0 +1,136 @@
+/* ===================== ABK LIGHT GRAY THEME (FINAL) ===================== */
+/* Buttons (AddToCart etc.) are NOT changed, only: Search button + headers */
+
+:root{
+  --bg: #d9d9d9;          /* общий фон */
+  --panel: #e6e6e6;       /* панели/карточки */
+  --panel-2: #ededed;     /* чуть светлее внутри */
+  --border: #bfbfbf;
+  --text: #2b2b2b;
+
+  --dark: #4f4f4f;        /* тёмно-серый для Search + заголовков Categories/Brands */
+  --dark-hover: #5c5c5c;
+
+  --link: #2b2b2b;
+}
+
+/* ===== BODY ===== */
+body{
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* ===== NAVBAR (убираем синие/голубые оттенки, делаем серым) ===== */
+.navbar,
+.navbar-inverse{
+  background: #cfcfcf !important;
+  border-color: var(--border) !important;
+}
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a{
+  color: var(--text) !important;
+}
+.navbar-inverse .navbar-nav > li > a:hover{
+  background: #bdbdbd !important;
+  color: var(--text) !important;
+}
+
+/* ===== PANELS (убираем bootstrap blue/info/primary) ===== */
+.panel,
+.panel-info,
+.panel-primary,
+.panel-success{
+  background: var(--panel) !important;
+  border-color: var(--border) !important;
+}
+
+.panel-heading,
+.panel-info > .panel-heading,
+.panel-primary > .panel-heading,
+.panel-success > .panel-heading{
+  background: #d4d4d4 !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+/* Внутри карточек */
+.panel-body{
+  background: var(--panel-2) !important;
+}
+
+/* ===== CATEGORY / BRAND: ТОЛЬКО заголовок тёмный ===== */
+/* Это строка с "Categories" и "Brands" (li.active) */
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus{
+  background: var(--dark) !important;
+  color: #fff !important;
+}
+
+/* ===== CATEGORY / BRAND: список светлый ===== */
+.nav-pills > li > a{
+  background: #e0e0e0 !important;
+  color: var(--text) !important;
+  margin-bottom: 2px;
+}
+.nav-pills > li > a:hover{
+  background: #d0d0d0 !important;
+  color: #000 !important;
+}
+
+/* ===== LINKS ===== */
+a{ color: var(--link) !important; }
+a:hover{ color:#000 !important; text-decoration:none !important; }
+
+/* ===== SEARCH BUTTON ONLY (btn-primary) ===== */
+/* Важно: AddToCart у тебя btn-danger, поэтому мы его НЕ трогаем */
+.btn-primary{
+  background: var(--dark) !important;
+  border-color: var(--dark) !important;
+  color: #fff !important;
+}
+.btn-primary:hover,
+.btn-primary:focus{
+  background: var(--dark-hover) !important;
+  border-color: var(--dark-hover) !important;
+}
+
+/* ===== INPUTS ===== */
+.form-control{
+  background: #f7f7f7 !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+}
+.form-control:focus{
+  border-color: #9e9e9e !important;
+  box-shadow: none !important;
+}
+
+/* ===== DROPDOWN CART ===== */
+.dropdown-menu{
+  background: var(--panel) !important;
+  border-color: var(--border) !important;
+}
+
+/* ===== OVERLAY ===== */
+.overlay{
+  background: rgba(160,160,160,0.45) !important;
+}
+
+/* ===== IMPORTANT: НЕ ТРОГАЕМ КНОПКИ AddToCart / btn-danger / btn-success / btn-info ===== */
+/* Если вдруг где-то btn-info используется как "Pay" и ты не хочешь менять — мы его не меняем. */
+/* PRODUCT IMAGE FIX */
+.product-image {
+    width: 100%;
+    height: 230px;          /* единая высота для всех товаров */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;    /* 🔥 сохраняет пропорции */
+}
